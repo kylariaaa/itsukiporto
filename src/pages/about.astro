@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+
+<!-- about page -->
+<BaseLayout title="About | Itsuki" description="About itsuki">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Makasih udah mampir ya! Biar kamu makin kenal aku, aku mau cerita sedikit tentang diriku."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/itsuki-art/itsuki.png"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Hai, saya <a href="https://astro.build/" >Itsuki Nakano!</a> Saya dikenal sebagai gadis yang serius dan berusaha keras dalam segala hal. Biasanya, saya adalah orang yang bangun lebih awal dibandingkan saudara-saudara saya. Saya suka berbicara dengan sopan dan formal, meski kadang-kadang itu bikin saya terkesan kaku—kakak saya, Nino, sering mengomentari itu.
+					</p>
+					<p>
+						Saya juga mudah gelisah, terutama saat menghadapi situasi yang tidak nyaman. Oh, dan saya punya nafsu makan yang besar! Sering kali saya terlihat sedang makan atau selalu lapar. Kadang, saya agak tidak adil dengan saudara-saudara saya dalam hal makanan. Contohnya, saya pernah mengusulkan berbagi kue hanya untuk mencicipi semua rasa yang ada.
+					</p>
+					<p>
+						Meskipun saya mencoba untuk tegas, saya terkadang kesulitan untuk jujur pada diri sendiri dan berterus terang. Tapi saya berusaha untuk belajar dan tumbuh. Jadi, itu sedikit tentang saya! Senang bisa berbagi!
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p> <a href="https://astro.build/" >Skill saya ? </a> Oke saya dikenal sebagai gadis yang rajin dan selalu melakukan segala sesuatu dengan sangat tepat. sangat tanggap dan memiliki kepekaan yang baik terhadap detail, meskipun saya memiliki indera pengarahan yang kurang baik. Meskipun penglihatan saya tidak sempurna, saya memiliki kemampuan observasi dan deduksi yang luar biasa. Dalam ujian, saya biasanya mendapatkan nilai tinggi, terutama dalam mata pelajaran Sains, yang merupakan kekuatanku. Dengan dedikasi dan kecerdasan, saya selalu berusaha untuk memberikan yang terbaik dalam segala hal yang dapat saya lakukan!</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Personality</h2>
+				<div class="content">
+					<p>Saya selalu berusaha untuk melakukan segala sesuatu dengan tepat dan penuh perhatian. Meskipun saya mungkin memiliki indera pengarahan yang kurang baik. saya juga <a href="https://astro.build/" >sering tersesat</a> atau <a href="https://astro.build/" >bingung </a>namun meskipun begitu saya sangat peka terhadap detail di sekitar saya.</p>
+					<p>Tapi di balik semua itu, saya juga seorang gadis yang memiliki impian tentang <a href="https://astro.build/" >cinta</a>. Mungkin karena sifat saya yang serius, kadang saya kesulitan untuk mengungkapkan perasaan saya. Namun, saya percaya bahwa dengan <a href="https://astro.build/" >ketulusan</a> dan <a href="https://astro.build/" >usaha</a>, cinta yang sejati pasti akan menemukan jalannya.</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

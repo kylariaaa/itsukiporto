@@ -1,1 +1,1 @@
-## inspirated By Jeanine White 
+## inspirated By Jeanine White // Deploy with Astro
